@@ -1,5 +1,5 @@
 kind: ImageStream
-apiVersion: v1
+apiVersion: image.openshift.io/v1
 metadata:
   name: image-processor
   labels:
@@ -18,17 +18,17 @@ metadata:
 spec:
   strategy:
     dockerStrategy:
-      dockerfilePath: Dockerfile
+      dockerfilePath: gpu.Dockerfile
     type: Docker
   source:
     contextDir: image-processor
     git:
-      uri: https://github.com/stefan-bergstein/manuela-visual-inspection.git
+      uri: https://github.com/sa-mw-dach/manuela-visual-inspection.git
     type: Git
   output:
     to:
       kind: ImageStreamTag
-      name: image-processor:cpu
+      name: image-processor:latest
   runPolicy: Serial
   triggers:
   - type: ConfigChange

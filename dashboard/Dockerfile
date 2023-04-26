@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
-RUN dnf install -y python3 python3-devel gcc gcc-c++ && dnf clean all
+RUN yum install -y python3 gcc; yum clean all
 
 COPY ./static /app/static
 COPY ./templates /app/templates

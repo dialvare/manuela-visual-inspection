@@ -1,5 +1,5 @@
 kind: ImageStream
-apiVersion: v1
+apiVersion: image.openshift.io/v1
 metadata:
   name: dashboard
   labels:
@@ -23,7 +23,7 @@ spec:
   source:
     contextDir: dashboard
     git:
-      uri: https://github.com/stefan-bergstein/manuela-visual-inspection.git
+      uri: https://github.com/dialvare/manuela-visual-inspection.git
     type: Git
   output:
     to:
